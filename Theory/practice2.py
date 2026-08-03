@@ -1,211 +1,167 @@
-#from sympy import isprime, primerange
-
-#num = int(input("Enter a number: "))
-#factorial = 1
-#for i in range(1, num + 1):
-#    factorial *= i
-#print("Factorial of", num, "is:", factorial)
-
-"""#role Number 008
-
-
-#program to find the grade of a student based on marks
-from statistics import mean
-
-
-
-
-marks = int(input("enter the marks from 0-100: "))
-
-
-if marks>=75 and marks <= 100:
-   grade = "distiction"
-elif marks>=60:
-   grade = "first class"
-elif marks>=50:
-   grade = "second class"
-elif marks>=35:
-   grade = "pass"
-elif marks>=0:
-   grade = "fail"
-else:
-   grade = "invalid input"
-
-
-print(grade)
-
-
-
-
-#find the greatest number among three numbers
-a = int(input("enter the number: "))
-b = int(input("enter the number: "))
-c = int(input("enter the number: "))
-
-
-print("The largest number is:", max(a, b, c))
-print("The largest number is:", mean([a, b, c]))
-
-
-#list1 = [a, b, c]
-#list1.sort()
-#print("The largest number is:", list1[-1])
-
-
-#------------------------------------
-#to find discount on train tickets
-#First point ask user weather railway employee or not
-#for railway employee discount is 30%
-#for others user if age is less than 18 20% discount
-#elif senior citizen age is greater than 60 25% discount
-# for rest 5 % discount
-
-
-is_railway_employee = input("Are you a railway employee? (yes/no): ")
-if is_railway_employee == "yes":
-   discount = 30
-else:
-   age = int(input("Enter your age: "))
-   if age < 18:
-       discount = 20
-   elif age > 60:
-       discount = 25
-   else:
-       discount = 5
-
-
-print(f"You are eligible for a discount of {discount}%.")
-
-"""
-
-
-"""
+# Program to find the factorial of a number
 num = int(input("Enter a number: "))
-is_prime = True
+fact = 1
+
+for i in range(1, num + 1):
+    fact *= i
+
+print("Factorial of", num, "is", fact)
+
+
+# Program to find the grade of a student
+marks = int(input("Enter marks (0-100): "))
+
+if 75 <= marks <= 100:
+    grade = "distinction"
+elif marks >= 60:
+    grade = "first class"
+elif marks >= 50:
+    grade = "second class"
+elif marks >= 35:
+    grade = "pass"
+elif marks >= 0:
+    grade = "fail"
+else:
+    grade = "invalid input"
+
+print("Grade:", grade)
+
+
+# Program to find the greatest among three numbers
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+z = int(input("Enter third number: "))
+
+largest = max(x, y, z)
+
+print("Largest number is:", largest)
+print("Average of the numbers is:", (x + y + z) / 3)
+
+
+# Train ticket discount
+employee = input("Are you a railway employee? (yes/no): ")
+
+if employee.lower() == "yes":
+    discount = 30
+else:
+    age = int(input("Enter your age: "))
+
+    if age < 18:
+        discount = 20
+    elif age > 60:
+        discount = 25
+    else:
+        discount = 5
+
+print("Eligible discount:", str(discount) + "%")
+
+
+# Prime number check
+num = int(input("Enter a number: "))
+
+prime = True
+
 if num < 2:
-    is_prime = False
+    prime = False
 else:
     for i in range(2, num):
         if num % i == 0:
-            is_prime = False
+            prime = False
             break
-if is_prime:
-    print(f"{num} is Prime")
+
+if prime:
+    print(num, "is a Prime Number")
 else:
-    print(f"{num} is Not Prime")
-
-"""
+    print(num, "is Not a Prime Number")
 
 
-"""n = int(input("How many terms? "))
+# Fibonacci series
+terms = int(input("How many terms? "))
+
 a, b = 0, 1
-for _ in range(n):
+
+for i in range(terms):
     print(a, end=" ")
     a, b = b, a + b
-print() # move to a new line at the end
-"""
 
-"""print("----- Simple Calculator -----")
-print("1. Add 2. Subtract 3. Multiply 4. Divide")
-choice = int(input("Enter your choice (1-4): "))
-a = float(input("Enter first number: "))
-b = float(input("Enter second number: "))
+print()
+
+
+# Simple Calculator
+print("----- Simple Calculator -----")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = int(input("Enter your choice: "))
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
 if choice == 1:
-    print(f"Result: {a + b}")
+    print("Result:", num1 + num2)
 elif choice == 2:
-    print(f"Result: {a - b}")
+    print("Result:", num1 - num2)
 elif choice == 3:
-    print(f"Result: {a * b}")
+    print("Result:", num1 * num2)
 elif choice == 4:
-    if b != 0:
-        print(f"Result: {a / b}")
+    if num2 != 0:
+        print("Result:", num1 / num2)
     else:
-        print("Error: Division by zero is not allowed")
+        print("Division by zero is not allowed")
 else:
     print("Invalid choice")
 
-"""
-
-#List based programs:-
-
-#____
-# Create a heterogeneous list
+# List Programs
 fruits = ["apple", "banana", "cherry", "date"]
 
-# Access by positive index (starts at 0)
-print(fruits[0])   # Output: apple
+print(fruits[0])
+print(fruits[-1])
 
-# Access by negative index (starts from the end)
-print(fruits[-1])  # Output: date
-
-#--------------
 numbers = [1, 2, 3]
 
-# Append an item to the end
-numbers.append(4) 
+numbers.append(4)
+numbers.insert(1, 1.5)
+numbers += [5, 6]
 
-# Insert an item at a specific index
-numbers.insert(1, 1.5) 
-
-# Extend the list with another list merge 2 lists
-numbers.extend([5, 6])
-
-print(numbers) # Output: [1, 1.5, 2, 3, 4, 5, 6]
-
-
-#______
+print(numbers)
 
 items = ["A", "B", "C", "D", "E"]
 
-# Remove by value (deletes the first occurrence)
-items.remove("B") 
+items.remove("B")
+last = items.pop()
+first = items.pop(0)
 
-# Remove and return by index (defaults to the last item)
-last_item = items.pop() 
-specific_item = items.pop(0)
-
-print(items) # Output: ['C', 'D']
+print(items)
 
 
-#_______
+marks = [45, 89, 12, 76, 23]
 
-scores = [45, 89, 12, 76, 23]
+print(max(marks))
+print(min(marks))
+print(sum(marks))
+print(len(marks))
 
-print(max(scores)) # Largest value: 89
-print(min(scores)) # Smallest value: 12
-print(sum(scores)) # Sum of elements: 245
-print(len(scores)) # Count of elements: 5
-
-
-#______
 
 letters = ["d", "a", "c", "b"]
 
-# Create a temporary sorted copy
-print(sorted(letters)) # Output: ['a', 'b', 'c', 'd']
-
-# Reverse the list in place
+sorted_letters = sorted(letters)
+print(sorted_letters)
 letters.reverse()
-print(letters)         # Output: ['b', 'c', 'a', 'd']
+print(letters)
 
 
+nums = [1, 2, 3, 4, 5, 6]
 
-#_______
+square_list = [i * i for i in nums if i % 2 == 0]
 
-# Create a list of squares for even numbers only
-numbers = [1, 2, 3, 4, 5, 6]
-even_squares = [x**2 for x in numbers if x % 2 == 0]
+print(square_list)
 
-print(even_squares) # Output: [4, 16, 36]
-
-
-#_______
 
 colors = ["red", "blue", "red", "green"]
 
-# Check existence
-if "blue" in colors:
-    print("Found blue!")
 
-# Count specific elements
-print(colors.count("red")) # Output: 2
+if "blue" in colors:
+    print("Blue is present")
+
+print(colors.count("red"))
