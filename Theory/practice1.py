@@ -1,4 +1,4 @@
-#when we apply sorting on the list, does it change indexing
+#when we apply sorting on the list, does it change indexing?
 
 letters = ["d", "a", "c", "b"]
 
