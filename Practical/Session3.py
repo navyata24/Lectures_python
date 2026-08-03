@@ -1,4 +1,3 @@
-# Write your exercise solutions here
 # 1.
 set1 = []
 number_of_elements_set1 = int(input("Enter the number of elements in the first set: "))
