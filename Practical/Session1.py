@@ -1,7 +1,7 @@
 # 1.
-print("My name is John Doe.")
+print("My name is Navyata Bhatt")
 print("I am in NMIMS.")
-print("I am studying AMC")
+print("I am studying in BSC AMC")
 
 # 2.
 w = True
