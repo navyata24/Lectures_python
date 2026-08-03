@@ -1,5 +1,3 @@
-# Write your exercise solutions here
-
 # 1.
 user_input = input("Enter a string: ")
 number_of_vowels = 0
